@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapport Gifting — Bonobo / Collection Été — Shop My Influence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Karla:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  --bg:       #f5f5f7;
+  --surface:  #ffffff;
+  --navy:     #0a0f2c;
+  --navy-2:   #1a1f42;
+  --orange:   #f47a34;
+  --orange-d: #d95f1e;
+  --orange-s: #fef0e8;
+  --purple:   #7b61ff;
+  --purple-s: #f0edff;
+  --text:     #14162b;
+  --muted:    #6b7087;
+  --muted-l:  #9499ad;
+  --line:     #e6e6ec;
+  --line-b:   #d0d0dc;
+  --smi-grad: linear-gradient(65.59deg,#419FC0 -3.14%,#7367F0 102.88%);
+  --r-sm: 12px;
+  --r:    16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --font: 'Karla', sans-serif;
+  --mono: 'DM Mono', monospace;
+  --shadow-sm: 0 4px 20px rgba(0,0,0,.04);
+  --shadow-md: 0 8px 32px rgba(0,0,0,.06);
+  --shadow-lg: 0 20px 64px rgba(0,0,0,.08);
+}
+
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── LABEL MONO (from landing page) ── */
+.label-mono{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--purple);margin-bottom:10px;
+}
+.label-mono::before{
+  content:'';width:20px;height:2px;
+  background:var(--purple);border-radius:1px;flex-shrink:0;
+}
+
+@keyframes fadeSlideUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes orbFloat{
+  0%,100%{transform:translate(0,0) scale(1)}
+  25%{transform:translate(40px,-30px) scale(1.05)}
+  50%{transform:translate(-20px,40px) scale(.96)}
+  75%{transform:translate(30px,20px) scale(1.03)}
+}
+
+/* ═══════════════════════════ HEADER ═══════════════════════════ */
+.report-header{
+  background:var(--surface);
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+
+/* gradient top bar */
+.header-top-bar{height:3px;background:var(--smi-grad);}
+
+/* orbs décoratifs, légers */
+.header-orbs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.h-orb{
+  position:absolute;border-radius:50%;filter:blur(80px);
+  animation:orbFloat 24s ease-in-out infinite;
+}
+.h-orb-1{width:500px;height:500px;background:var(--purple-s);opacity:.6;top:-200px;right:-100px;animation-delay:0s}
+.h-orb-2{width:350px;height:350px;background:var(--orange-s);opacity:.5;bottom:-150px;left:-80px;animation-delay:-8s}
+
+.header-inner{
+  max-width:1200px;margin:0 auto;padding:40px 48px 44px;
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;
+  position:relative;z-index:1;
+}
+
+.header-smi-row{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 16px 6px 8px;
+  border:1px solid var(--line);border-radius:100px;
+  color:var(--muted);background:var(--bg);
+}
+
+.smi-badge-dot{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--smi-grad);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.smi-badge-dot svg{width:10px;height:10px}
+
+.header-campaign-title{
+  font-size:clamp(32px,3.8vw,50px);font-weight:800;
+  line-height:1.05;letter-spacing:-.03em;
+  color:var(--navy);margin-bottom:8px;
+  animation:fadeSlideUp .7s ease .2s both;
+}
+
+.header-campaign-title .gradient-text{
+  color:var(--orange);
+  -webkit-text-fill-color:var(--orange);
+}
+
+.header-campaign-sub{
+  font-size:15px;color:var(--muted);
+  font-weight:400;margin-bottom:28px;
+  animation:fadeSlideUp .7s ease .3s both;
+}
+
+.header-chips{
+  display:flex;flex-wrap:wrap;gap:8px;
+  animation:fadeSlideUp .7s ease .4s both;
+}
+
+.header-chip{
+  display:flex;flex-direction:column;gap:1px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:var(--r-sm);
+  padding:8px 14px;
+}
+
+.chip-label{
+  font-family:var(--mono);font-size:9px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--muted-l);
+}
+.chip-value{font-size:13px;font-weight:700;color:var(--navy);}
+
+.header-right{
+  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+  padding-top:4px;
+  animation:fadeSlideUp .7s ease .3s both;
+}
+
+.brand-logo-box{
+  width:72px;height:72px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:800;color:var(--navy);overflow:hidden;
+  box-shadow:var(--shadow-md);letter-spacing:-1px;
+}
+
+.header-report-type{
+  font-family:var(--mono);font-size:9px;font-weight:500;
+  color:var(--muted-l);text-transform:uppercase;letter-spacing:.1em;text-align:right;
+}
+.header-date{font-size:11px;color:var(--muted-l);text-align:right;}
+
+/* ═══════════════════════════ MAIN ═══════════════════════════ */
+.main{max-width:1200px;margin:0 auto;padding:48px 48px;}
+
+/* ── SECTION HEADER ── */
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+
+.section-head-line{flex:1;height:1px;background:var(--line);}
+
+/* ═══════════════════════════ KPI GRID ═══════════════════════════ */
+.kpi-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:14px;margin-bottom:48px;
+}
+
+.kpi-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  padding:24px;
+  box-shadow:var(--shadow-sm);
+  transition:box-shadow .2s,transform .2s;
+  animation:fadeSlideUp .5s ease both;
+  position:relative;overflow:hidden;
+}
+
+.kpi-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+
+.kpi-card:nth-child(1){animation-delay:.05s}
+.kpi-card:nth-child(2){animation-delay:.1s}
+.kpi-card:nth-child(3){animation-delay:.15s}
+.kpi-card:nth-child(4){animation-delay:.2s}
+.kpi-card:nth-child(5){animation-delay:.25s}
+.kpi-card:nth-child(6){animation-delay:.3s}
+
+/* carte featured = 2 colonnes, fond bg légèrement différent */
+.kpi-card.featured{
+  grid-column:span 2;
+  background:var(--purple-s);
+  border-color:rgba(123,97,255,.22);
+}
+
+.kpi-icon{
+  width:36px;height:36px;border-radius:var(--r-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;margin-bottom:14px;
+}
+
+.kpi-icon.vi{background:var(--purple-s);border:1px solid rgba(123,97,255,.18);}
+.kpi-icon.cy{background:var(--orange-s);border:1px solid rgba(244,122,52,.18);}
+.kpi-icon.te{background:var(--purple-s);border:1px solid rgba(123,97,255,.18);}
+.kpi-icon.or{background:var(--orange-s);border:1px solid rgba(244,122,52,.25);}
+.kpi-icon.wh{background:rgba(255,255,255,.55);border:1px solid rgba(123,97,255,.15);}
+
+.kpi-value{
+  font-size:28px;font-weight:800;
+  line-height:1;letter-spacing:-1px;
+  color:var(--navy);margin-bottom:5px;
+}
+.kpi-card.featured .kpi-value{color:var(--purple);}
+
+.kpi-label{font-size:13px;color:var(--muted);font-weight:500;}
+.kpi-sub{font-size:11px;color:var(--muted-l);margin-top:2px;}
+
+.kpi-featured-grid{
+  display:grid;grid-template-columns:1fr 1px 1fr;
+  gap:20px;align-items:center;
+}
+.kpi-v-sep{width:1px;height:56px;background:rgba(123,97,255,.2);align-self:center;}
+
+/* ═══════════════════════════ VALORISATION SMI ═══════════════════════════ */
+.smi-value-block{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  margin-bottom:48px;
+  box-shadow:var(--shadow-md);
+  animation:fadeSlideUp .5s ease .1s both;
+}
+
+.smi-value-top-bar{height:3px;background:var(--smi-grad);}
+
+.smi-value-inner{padding:32px 36px 28px;}
+
+.smi-value-head{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;gap:24px;
+  margin-bottom:28px;
+}
+
+.smi-value-title{
+  font-size:20px;font-weight:700;
+  color:var(--navy);line-height:1.3;
+  max-width:440px;
+  letter-spacing:-.02em;
+}
+.smi-value-title em{font-style:normal;color:var(--muted);}
+
+.saving-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--purple-s);
+  border:1px solid rgba(123,97,255,.2);
+  border-radius:100px;padding:8px 16px;
+  white-space:nowrap;flex-shrink:0;
+}
+.saving-chip-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--purple);flex-shrink:0;
+}
+.saving-chip-text{font-size:12px;font-weight:700;color:var(--purple);}
+
+.compare-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:12px;
+}
+
+.compare-col{
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:20px;
+  transition:box-shadow .2s;
+}
+.compare-col:hover{box-shadow:var(--shadow-sm);}
+
+/* colonne SMI mise en avant */
+.compare-col.smi-col{
+  background:var(--purple-s);
+  border-color:rgba(123,97,255,.25);
+  position:relative;
+}
+.compare-col.smi-col::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:2px;background:var(--smi-grad);border-radius:var(--r) var(--r) 0 0;
+}
+
+.compare-platform-row{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+.platform-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.platform-dot.g{background:var(--orange);}
+.platform-dot.m{background:var(--orange-d);}
+.platform-dot.s{background:var(--purple);}
+.platform-name{
+  font-family:var(--mono);font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+}
+.compare-col.smi-col .platform-name{color:var(--purple);}
+
+.compare-kpi-tag{
+  font-family:var(--mono);font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted);margin-bottom:4px;
+}
+.compare-kpi-desc{font-size:13px;color:var(--muted);margin-bottom:14px;}
+.compare-col.smi-col .compare-kpi-desc{color:var(--purple);font-weight:600;}
+
+.cost-bar-label{
+  font-family:var(--mono);font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted-l);margin-bottom:5px;
+}
+.cost-bar-track{
+  height:3px;background:var(--line);border-radius:99px;
+  overflow:hidden;margin-bottom:10px;
+}
+.cost-bar-fill{height:100%;border-radius:99px;}
+.cost-bar-fill.g{background:var(--orange);width:65%;}
+.cost-bar-fill.m{background:var(--orange-d);width:42%;}
+.cost-bar-fill.s{background:var(--smi-grad);width:15%;}
+
+.cost-main-val{
+  font-size:22px;font-weight:800;
+  color:var(--navy);line-height:1;margin-bottom:3px;
+  letter-spacing:-.5px;
+}
+.compare-col.smi-col .cost-main-val{color:var(--purple);}
+.cost-range-note{font-size:12px;color:var(--muted-l);}
+
+.smi-footnote{
+  padding:14px 36px;
+  border-top:1px solid var(--line);
+  background:var(--bg);
+  font-family:var(--mono);font-size:11px;
+  color:var(--muted-l);line-height:1.7;
+}
+
+/* ═══════════════════════════ TOP 3 ═══════════════════════════ */
+.top3-grid{
+  display:grid;grid-template-columns:1fr 1.08fr 1fr;
+  gap:12px;align-items:end;
+  margin-bottom:48px;
+}
+
+.podium-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  transition:box-shadow .2s,transform .2s;
+  animation:fadeSlideUp .5s ease both;
+}
+.podium-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);}
+.podium-card:nth-child(1){animation-delay:.1s;}
+.podium-card:nth-child(2){animation-delay:.05s;}
+.podium-card:nth-child(3){animation-delay:.15s;}
+
+.podium-card.gold{
+  border-color:rgba(123,97,255,.35);
+  border-width:1.5px;
+}
+
+.podium-top-strip{height:3px;background:var(--line);}
+.podium-card.gold .podium-top-strip{background:var(--smi-grad);}
+
+.podium-head{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 16px;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+.podium-card.gold .podium-head{background:var(--purple-s);}
+
+.podium-rank{
+  font-size:22px;font-weight:800;color:var(--line-b);
+  line-height:1;font-variant-numeric:tabular-nums;
+}
+.podium-card.gold .podium-rank{color:rgba(123,97,255,.25);}
+
+.podium-av{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:#fff;flex-shrink:0;
+}
+
+.podium-meta{flex:1;min-width:0;}
+.podium-name{font-size:13px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.podium-card.gold .podium-name{color:var(--purple);}
+.podium-handle{font-size:10px;color:var(--muted-l);}
+
+.podium-network{font-size:14px;}
+
+.podium-body{padding:14px 16px 18px;}
+
+.score-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.score-label{font-family:var(--mono);font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-l);}
+.score-value{font-size:16px;font-weight:800;color:var(--purple);}
+.podium-card.gold .score-value{font-size:20px;}
+
+.score-track{
+  height:3px;background:var(--purple-s);border-radius:99px;
+  overflow:hidden;margin-bottom:14px;
+}
+.score-fill{height:100%;background:var(--smi-grad);border-radius:99px;}
+
+.podium-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.p-stat{background:var(--bg);border-radius:var(--r-sm);padding:8px 10px;}
+.p-stat-lbl{font-family:var(--mono);font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-l);margin-bottom:2px;}
+.p-stat-val{font-size:13px;font-weight:700;color:var(--navy);}
+
+/* ═══════════════════════════ AUDIENCE + RÉSEAUX ═══════════════════════════ */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:48px;}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  padding:26px;
+  box-shadow:var(--shadow-sm);
+  animation:fadeSlideUp .5s ease .1s both;
+}
+
+/* sublabels inside cards */
+.card-sublabel{
+  font-family:var(--mono);font-size:9px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--muted-l);margin-bottom:10px;
+}
+
+.gender-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.gender-lbl{font-size:12px;font-weight:600;color:var(--text);width:72px;flex-shrink:0;}
+.gender-bar-bg{flex:1;height:5px;background:var(--bg);border-radius:99px;overflow:hidden;}
+.gender-bar-f{height:100%;border-radius:99px;background:var(--purple);}
+.gender-bar-m{height:100%;border-radius:99px;background:var(--orange);}
+.gender-pct{font-size:12px;font-weight:700;color:var(--navy);width:30px;text-align:right;}
+
+.age-row{display:grid;grid-template-columns:52px 1fr 28px;align-items:center;gap:10px;margin-bottom:8px;}
+.age-range{font-size:11px;color:var(--muted);font-weight:500;}
+.age-bar-bg{height:4px;background:var(--bg);border-radius:99px;overflow:hidden;}
+.age-bar-fill{height:100%;background:var(--purple);border-radius:99px;}
+.age-pct{font-size:11px;font-weight:700;color:var(--navy);text-align:right;}
+
+.kolsquare-tag{
+  margin-top:12px;
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:9px;font-weight:500;
+  color:var(--muted-l);text-transform:uppercase;letter-spacing:.08em;
+}
+.kolsquare-tag::before{
+  content:'';width:14px;height:1px;background:var(--line-b);flex-shrink:0;
+}
+
+/* network */
+.network-item{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.network-icon{
+  width:30px;height:30px;border-radius:var(--r-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.network-icon.ig{background:#FFF0F5;border:1px solid rgba(225,48,108,.1);}
+.network-icon.tt{background:#F0F0F0;border:1px solid rgba(0,0,0,.08);}
+.network-icon.yt{background:#FFF0F0;border:1px solid rgba(255,0,0,.1);}
+
+.network-meta{flex:1;}
+.network-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;}
+.network-bar-bg{height:3px;background:var(--bg);border-radius:99px;overflow:hidden;}
+.network-bar-fill{height:100%;border-radius:99px;}
+.network-bar-fill.ig{background:#E1306C;}
+.network-bar-fill.tt{background:#010101;}
+.network-bar-fill.yt{background:#FF0000;}
+.network-pct{font-size:12px;font-weight:700;color:var(--navy);width:30px;text-align:right;}
+
+.country-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px;}
+.country-item{
+  display:flex;align-items:center;gap:7px;
+  background:var(--bg);border-radius:var(--r-sm);
+  border:1px solid var(--line);
+  padding:6px 10px;
+}
+.country-flag{font-size:16px;}
+.country-name{flex:1;font-size:11px;font-weight:500;color:var(--text);}
+.country-pct{font-size:12px;font-weight:700;color:var(--purple);}
+
+/* ═══════════════════════════ TABLE ═══════════════════════════ */
+.table-wrap{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  margin-bottom:48px;
+  animation:fadeSlideUp .5s ease .1s both;
+}
+
+.table-toolbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;border-bottom:1px solid var(--line);
+}
+
+.table-toolbar-label{
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+.table-count{
+  font-size:11px;color:var(--muted-l);
+  background:var(--bg);border:1px solid var(--line);
+  border-radius:100px;padding:3px 10px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.06em;
+}
+
+table{width:100%;border-collapse:collapse;}
+
+thead th{
+  padding:9px 16px;text-align:left;
+  font-family:var(--mono);font-size:9px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted-l);background:var(--bg);
+  border-bottom:1px solid var(--line);
+  white-space:nowrap;
+}
+
+tbody td{
+  padding:12px 16px;
+  border-bottom:1px solid rgba(230,230,236,.5);
+  vertical-align:middle;
+}
+
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover td{background:var(--bg);}
+
+.inf-cell{display:flex;align-items:center;gap:10px;}
+.inf-av{
+  width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:#fff;flex-shrink:0;
+}
+.inf-name{font-size:12px;font-weight:700;color:var(--navy);line-height:1.3;}
+.inf-handle{font-size:10px;color:var(--muted-l);}
+
+.status-chip{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:3px 9px;border-radius:100px;
+  font-size:10px;font-weight:700;white-space:nowrap;
+  font-family:var(--mono);letter-spacing:.02em;
+}
+.status-chip.pub{background:var(--purple-s);color:var(--purple);border:1px solid rgba(123,97,255,.2);}
+.status-chip.lnk{background:var(--orange-s);color:var(--orange-d);border:1px solid rgba(244,122,52,.2);}
+.status-chip.cnt{background:var(--purple-s);color:var(--purple);border:1px solid rgba(123,97,255,.25);}
+.status-chip.pnd{background:var(--orange-s);color:var(--orange-d);border:1px solid rgba(244,122,52,.2);}
+
+.td-val{font-size:13px;font-weight:700;color:var(--navy);}
+.td-muted{color:var(--muted-l);font-size:12px;}
+.net-emoji{font-size:14px;}
+
+.table-footer{
+  display:flex;align-items:center;justify-content:flex-end;gap:8px;
+  padding:11px 20px;border-top:1px solid var(--line);
+  font-size:11px;color:var(--muted-l);
+}
+.pg-btn{
+  width:26px;height:26px;
+  border-radius:var(--r-sm);
+  border:1px solid var(--line);background:var(--surface);
+  cursor:pointer;font-size:12px;color:var(--muted);
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .15s;
+}
+.pg-btn:hover{background:var(--bg);}
+.pg-select{
+  border:1px solid var(--line);border-radius:var(--r-sm);
+  padding:3px 8px;font-size:11px;color:var(--muted);
+  background:var(--surface);font-family:var(--font);
+}
+
+/* ═══════════════════════════ TRAFFIC ═══════════════════════════ */
+.traffic-section{margin-bottom:48px;}
+
+.traffic-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.traffic-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  animation:fadeSlideUp .5s ease .1s both;
+  transition:box-shadow .2s;
+}
+.traffic-card:hover{box-shadow:var(--shadow-md);}
+
+.traffic-card-header{
+  padding:16px 22px;
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--bg);
+}
+
+.traffic-card-title{
+  font-family:var(--mono);font-size:10px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+.traffic-card-pill{
+  display:inline-flex;align-items:center;
+  background:var(--purple-s);
+  border:1px solid rgba(123,97,255,.2);
+  border-radius:100px;
+  padding:3px 12px;
+  font-family:var(--mono);font-size:10px;font-weight:600;
+  color:var(--purple);
+}
+
+.traffic-cols-head{
+  display:grid;
+  grid-template-columns:1fr 110px 130px;
+  padding:8px 22px;
+  border-bottom:1px solid var(--line);
+  background:var(--bg);
+}
+.traffic-col-lbl{
+  font-family:var(--mono);font-size:9px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;color:var(--muted-l);
+}
+.traffic-col-lbl.right{text-align:right;}
+
+.traffic-row{
+  display:grid;
+  grid-template-columns:1fr 110px 130px;
+  align-items:stretch;
+  padding:0 22px;
+  transition:background .15s;
+  border-bottom:1px solid rgba(230,230,236,.5);
+}
+.traffic-row:last-child{border-bottom:none;}
+.traffic-row:hover{background:rgba(123,97,255,.025);}
+
+.traffic-platform{
+  display:flex;align-items:center;gap:10px;
+  padding:13px 0;
+}
+
+.traffic-name-wrap{flex:1;min-width:0;}
+
+.traffic-mini-bar-bg{
+  height:2px;
+  background:var(--line);
+  border-radius:99px;
+  overflow:hidden;
+  margin-top:5px;
+}
+.traffic-mini-bar-fill{
+  height:100%;
+  border-radius:99px;
+  background:var(--smi-grad);
+  transition:width .6s cubic-bezier(.16,1,.3,1);
+}
+
+.t-icon{
+  width:32px;height:32px;border-radius:var(--r-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;flex-shrink:0;
+}
+.t-icon.ig{background:#FFF0F5;border:1px solid rgba(225,48,108,.1);}
+.t-icon.tt{background:#F2F2F2;border:1px solid rgba(0,0,0,.08);}
+.t-icon.yt{background:#FFF2F2;border:1px solid rgba(255,0,0,.1);}
+.t-icon.flag{background:var(--bg);border:1px solid var(--line);font-size:18px;}
+.t-icon.total{
+  background:var(--purple-s);
+  border:1px solid rgba(123,97,255,.2);
+  font-size:11px;font-weight:700;color:var(--purple);
+  font-family:var(--mono);
+}
+
+.traffic-name{font-size:13px;font-weight:600;color:var(--navy);line-height:1.2;}
+.traffic-share{font-family:var(--mono);font-size:9px;font-weight:500;color:var(--muted-l);margin-top:1px;}
+
+.traffic-num-cell{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:13px 0;text-align:right;
+}
+.traffic-num-main{font-size:15px;font-weight:700;color:var(--navy);line-height:1.1;}
+.traffic-num-pct{font-family:var(--mono);font-size:9px;font-weight:500;color:var(--muted-l);margin-top:2px;}
+
+.traffic-row.total-row{
+  background:var(--purple-s);
+  border-top:1px solid rgba(123,97,255,.15);
+  border-bottom:none;
+}
+.traffic-row.total-row:hover{background:var(--purple-s);}
+.traffic-row.total-row .traffic-num-main{color:var(--purple);font-size:16px;font-weight:800;}
+.traffic-row.total-row .traffic-name{color:var(--purple);font-weight:700;}
+
+/* ═══════════════════════════ UGC ═══════════════════════════ */
+.ugc-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);
+  gap:12px;
+}
+
+.ugc-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  transition:box-shadow .2s,transform .2s;
+  cursor:pointer;
+  animation:fadeSlideUp .5s ease both;
+}
+.ugc-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);}
+.ugc-card:nth-child(1){animation-delay:.05s}
+.ugc-card:nth-child(2){animation-delay:.1s}
+.ugc-card:nth-child(3){animation-delay:.15s}
+.ugc-card:nth-child(4){animation-delay:.2s}
+.ugc-card:nth-child(5){animation-delay:.25s}
+.ugc-card:nth-child(6){animation-delay:.3s}
+
+/* RATIO 9:16 strict */
+.ugc-thumb{
+  aspect-ratio:9/16;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;
+}
+
+.ug1{background:linear-gradient(155deg,var(--purple-s) 0%,rgba(196,184,255,.55) 100%);}
+.ug2{background:linear-gradient(155deg,var(--purple-s) 0%,rgba(72,208,174,.35) 100%);}
+.ug3{background:linear-gradient(155deg,var(--orange-s) 0%,rgba(244,122,52,.25) 100%);}
+.ug4{background:linear-gradient(155deg,#FFF0F5 0%,rgba(255,55,139,.2) 100%);}
+.ug5{background:linear-gradient(155deg,var(--purple-s) 0%,rgba(115,103,240,.25) 100%);}
+.ug6{background:linear-gradient(155deg,var(--orange-s) 0%,rgba(244,122,52,.2) 100%);}
+
+.ugc-day-badge{
+  position:absolute;top:7px;left:7px;
+  background:rgba(255,255,255,.88);backdrop-filter:blur(4px);
+  font-family:var(--mono);font-size:8px;font-weight:500;
+  padding:3px 8px;border-radius:100px;
+  color:var(--muted);letter-spacing:.06em;text-transform:uppercase;
+}
+
+.ugc-views{
+  position:absolute;bottom:7px;right:7px;
+  background:rgba(10,15,44,.55);
+  color:#fff;font-size:9px;font-weight:500;
+  padding:3px 7px;border-radius:100px;backdrop-filter:blur(4px);
+}
+
+.ugc-info{padding:9px 11px 12px;}
+.ugc-handle{font-size:11px;font-weight:700;color:var(--navy);}
+.ugc-type{font-size:10px;color:var(--muted-l);margin-top:1px;margin-bottom:6px;}
+.ugc-imp{display:flex;align-items:baseline;gap:3px;}
+.ugc-imp-val{font-size:12px;font-weight:700;color:var(--purple);}
+.ugc-imp-lbl{font-size:9px;color:var(--muted-l);}
+
+/* ═══════════════════════════ FOOTER ═══════════════════════════ */
+.report-footer{
+  background:var(--surface);
+  border-top:1px solid var(--line);
+  margin-top:0;
+}
+
+.footer-grad-bar{height:3px;background:var(--smi-grad);}
+
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  padding:22px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+
+.footer-brand{display:flex;align-items:center;gap:10px;}
+.footer-brand-icon{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--smi-grad);
+  display:flex;align-items:center;justify-content:center;
+}
+.footer-brand-icon svg{width:12px;height:12px;}
+.footer-brand-name{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.1em;color:var(--muted);
+}
+.footer-brand-sub{font-size:10px;color:var(--muted-l);}
+.footer-right{font-size:10px;color:var(--muted-l);text-align:right;line-height:1.7;}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .kpi-grid{grid-template-columns:1fr 1fr;}
+  .kpi-card.featured{grid-column:span 2;}
+  .top3-grid{grid-template-columns:1fr;align-items:unset;}
+  .two-col{grid-template-columns:1fr;}
+  .ugc-grid{grid-template-columns:repeat(3,1fr);}
+  .compare-grid{grid-template-columns:1fr;}
+  .header-inner{grid-template-columns:1fr;}
+  .main{padding:28px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="report-header">
+  <div class="header-top-bar"></div>
+  <div class="header-orbs">
+    <div class="h-orb h-orb-1"></div>
+    <div class="h-orb h-orb-2"></div>
+  </div>
+  <div class="header-inner">
+    <div>
+      <div class="header-smi-row">
+        <div class="smi-badge-dot">
+          <svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="white" stroke-width="1.2"/><path d="M2.5 5C2.5 3.62 3.62 2.5 5 2.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        Shop My Influence &nbsp;·&nbsp; Rapport Gifting
+      </div>
+      <h1 class="header-campaign-title">
+        BONOBO / COLLECTION ÉTÉ ☀️
+      </h1>
+      <p class="header-campaign-sub">Campagne produit — Bilan complet de campagne</p>
+      <div class="header-chips">
+        <div class="header-chip">
+          <span class="chip-label">Période</span>
+          <span class="chip-value">1 Juin → 31 Août 2024</span>
+        </div>
+        <div class="header-chip">
+          <span class="chip-label">Candidatures</span>
+          <span class="chip-value">95 profils</span>
+        </div>
+        <div class="header-chip">
+          <span class="chip-label">Valeur unitaire</span>
+          <span class="chip-value">100 €</span>
+        </div>
+        <div class="header-chip">
+          <span class="chip-label">Influenceurs activés</span>
+          <span class="chip-value">48 profils</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand-logo-box"><img src="https://firebasestorage.googleapis.com/v0/b/shopmyinfluens.appspot.com/o/shopmyinfluens%2FBrands%2Fclassic_brands%2Fbonoboplanet?alt=media&t=1780303058534" alt="Bonobo" style="width:52px;height:52px;object-fit:contain;border-radius:8px;"></div>
+      <span class="header-report-type">Rapport officiel SMI</span>
+      <span class="header-date">Généré le 28 mai 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MAIN ═══ -->
+<div class="main">
+
+  <!-- KPIs -->
+  <div class="section-head">
+    <span class="label-mono">Performances globales</span>
+    <div class="section-head-line"></div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-icon vi">📢</div>
+      <div class="kpi-value">2,4M</div>
+      <div class="kpi-label">Reach total</div>
+      <div class="kpi-sub">Audience agrégée atteinte</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon cy">🖱️</div>
+      <div class="kpi-value">14 280</div>
+      <div class="kpi-label">Clics bruts</div>
+      <div class="kpi-sub">Total des clics générés</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon te">👤</div>
+      <div class="kpi-value">9 310</div>
+      <div class="kpi-label">Clics nets</div>
+      <div class="kpi-sub">Visiteurs uniques générés</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon or">💶</div>
+      <div class="kpi-value">184 600€</div>
+      <div class="kpi-label">CA généré</div>
+      <div class="kpi-sub">Chiffre d'affaires tracké</div>
+    </div>
+    <div class="kpi-card featured">
+      <div class="kpi-featured-grid">
+        <div>
+          <div class="kpi-icon wh">📊</div>
+          <div class="kpi-value">87,5%</div>
+          <div class="kpi-label">Taux de publication</div>
+          <div class="kpi-sub">42 / 48 influenceurs publiés</div>
+        </div>
+        <div class="kpi-v-sep"></div>
+        <div>
+          <div class="kpi-icon wh">❤️</div>
+          <div class="kpi-value">4,8%</div>
+          <div class="kpi-label">Engagement moyen</div>
+          <div class="kpi-sub">Taux moyen des profils</div>
+        </div>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon vi">🎬</div>
+      <div class="kpi-value">63</div>
+      <div class="kpi-label">Contenus publiés</div>
+      <div class="kpi-sub">Stories Instagram</div>
+    </div>
+  </div>
+
+  <!-- VALORISATION SMI -->
+  <div class="section-head">
+    <span class="label-mono">Valeur générée via SMI</span>
+    <div class="section-head-line"></div>
+  </div>
+
+  <div class="smi-value-block">
+    <div class="smi-value-top-bar"></div>
+    <div class="smi-value-inner">
+      <div class="smi-value-head">
+        <div class="smi-value-title">
+          Si ces clics avaient été achetés<br>en publicité payante,<br><em>combien ça aurait coûté ?</em>
+        </div>
+        <div class="saving-chip">
+          <div class="saving-chip-dot"></div>
+          <span class="saving-chip-text">Économie estimée : 4 200€ → 16 100€</span>
+        </div>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <div class="compare-platform-row">
+            <div class="platform-dot g"></div>
+            <span class="platform-name">Google Ads</span>
+          </div>
+          <div class="compare-kpi-tag">KPI comparé</div>
+          <div class="compare-kpi-desc">Clics bruts · 14 280 clics</div>
+          <div class="cost-bar-label">Coût estimé</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill g"></div></div>
+          <div class="cost-main-val">7 140€ → 17 136€</div>
+          <div class="cost-range-note">0,50€ → 1,20€ par clic Search</div>
+        </div>
+        <div class="compare-col">
+          <div class="compare-platform-row">
+            <div class="platform-dot m"></div>
+            <span class="platform-name">Meta Ads</span>
+          </div>
+          <div class="compare-kpi-tag">KPI comparé</div>
+          <div class="compare-kpi-desc">Clics nets · 9 310 visiteurs uniques</div>
+          <div class="cost-bar-label">Coût estimé</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill m"></div></div>
+          <div class="cost-main-val">2 793€ → 7 448€</div>
+          <div class="cost-range-note">0,30€ → 0,80€ par clic unique</div>
+        </div>
+        <div class="compare-col smi-col">
+          <div class="compare-platform-row">
+            <div class="platform-dot s"></div>
+            <span class="platform-name">Shop My Influence</span>
+          </div>
+          <div class="compare-kpi-tag">Coût réel campagne</div>
+          <div class="compare-kpi-desc">Gifting + commissions affiliés</div>
+          <div class="cost-bar-label">Coût total</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill s"></div></div>
+          <div class="cost-main-val">4 080€</div>
+          <div class="cost-range-note">48 × 85€ gifting + commissions</div>
+        </div>
+      </div>
+    </div>
+    <div class="smi-footnote">
+      * Fourchettes Google Ads basées sur un CPC Search moyen (0,50€ → 1,20€). Fourchettes Meta Ads basées sur un CPC unique moyen (0,30€ → 0,80€). Les clics SMI bénéficient d'une audience qualifiée avec une valeur perçue supérieure au clic publicitaire standard.
+    </div>
+  </div>
+
+  <!-- TOP 3 -->
+  <div class="section-head">
+    <span class="label-mono">Top 3 Influenceurs</span>
+    <div class="section-head-line"></div>
+  </div>
+
+  <div class="top3-grid">
+    <!-- 2ème -->
+    <div class="podium-card">
+      <div class="podium-top-strip"></div>
+      <div class="podium-head">
+        <span class="podium-rank">02</span>
+        <div class="podium-av" style="background:linear-gradient(135deg,#818CF8,#A5B4FC)">LF</div>
+        <div class="podium-meta">
+          <div class="podium-name">Laurine F.</div>
+          <div class="podium-handle">@laurine.fit</div>
+        </div>
+        <span class="podium-network">📸</span>
+      </div>
+      <div class="podium-body">
+<div class="score-track"><div class="score-fill" style="width:84%"></div></div>
+        <div class="podium-stats">
+          <div class="p-stat"><div class="p-stat-lbl">Clics bruts</div><div class="p-stat-val">2 140</div></div>
+          <div class="p-stat"><div class="p-stat-lbl">Clics nets</div><div class="p-stat-val">1 380</div></div>
+          <div class="p-stat"><div class="p-stat-lbl">CA généré</div><div class="p-stat-val">28 400€</div></div>
+          <div class="p-stat"><div class="p-stat-lbl">Commission</div><div class="p-stat-val">1 420€</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- 1er -->
+    <div class="podium-card gold">
+      <div class="podium-top-strip"></div>
+      <div class="podium-head">
+        <span class="podium-rank">01</span>
+        <div class="podium-av" style="background:linear-gradient(135deg,#34D399,#6EE7B7);color:#064E3B">TC</div>
+        <div class="podium-meta">
+          <div class="podium-name">Clara T.</div>
+          <div class="podium-handle">@the_claraa</div>
+        </div>
+        <span class="podium-network">📸</span>
+      </div>
+      <div class="podium-body">
+<div class="score-track"><div class="score-fill" style="width:96%"></div></div>
+        <div class="podium-stats">
+          <div class="p-stat"><div class="p-stat-lbl">Clics bruts</div><div class="p-stat-val">3 420</div></div>
+          <div class="p-stat"><div class="p-stat-lbl">Clics nets</div><div class="p-stat-val">2 180</div></div>
+          <div class="p-stat"><div class="p-stat-lbl">CA généré</div><div class="p-stat-val">48 200€</div></div>
+          <div class="p-stat"><div class="p-stat-lbl">Commission</div><div class="p-stat-val">2 410€</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- 3ème -->
+    <div class="podium-card">
+      <div class="podium-top-strip"></div>
+      <div class="podium-head">
+        <span class="podium-rank">03</span>
+        <div class="podium-av" style="background:linear-gradient(135deg,#F87171,#FCA5A5);color:#7F1D1D">JE</div>
+        <div class="podium-meta">
+          <div class="podium-name">Julie E.</div>
+          <div class="podium-handle">@julie.eats</div>
+        </div>
+        <span class="podium-network">📸</span>
+      </div>
+      <div class="podium-body">
+<div class="score-track"><div class="score-fill" style="width:78%"></div></div>
+        <div class="podium-stats">
+          <div class="p-stat"><div class="p-stat-lbl">Clics bruts</div><div class="p-stat-val">1 870</div></div>
+          <div class="p-stat"><div class="p-stat-lbl">Clics nets</div><div class="p-stat-val">1 210</div></div>
+          <div class="p-stat"><div class="p-stat-lbl">CA généré</div><div class="p-stat-val">22 600€</div></div>
+          <div class="p-stat"><div class="p-stat-lbl">Commission</div><div class="p-stat-val">1 130€</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DÉTAIL DU TRAFIC -->
+  <div class="section-head">
+    <span class="label-mono">Détail du trafic</span>
+    <div class="section-head-line"></div>
+  </div>
+
+  <div class="traffic-section">
+    <div class="traffic-grid">
+
+      <!-- Card Réseaux sociaux -->
+      <div class="traffic-card">
+        <div class="traffic-card-header">
+          <span class="traffic-card-title">Source par réseau social</span>
+          <div class="traffic-card-pill">3 réseaux actifs</div>
+        </div>
+        <div class="traffic-cols-head">
+          <span class="traffic-col-lbl">Réseau</span>
+          <span class="traffic-col-lbl right">Clics bruts</span>
+          <span class="traffic-col-lbl right">Visiteurs uniques</span>
+        </div>
+        <div class="traffic-row">
+          <div class="traffic-platform">
+            <div class="t-icon ig">📸</div>
+            <div class="traffic-name-wrap">
+              <div class="traffic-name">Instagram</div>
+              <div class="traffic-mini-bar-bg"><div class="traffic-mini-bar-fill" style="width:62%"></div></div>
+            </div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">8 854</div>
+            <div class="traffic-num-pct">62%</div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">5 772</div>
+            <div class="traffic-num-pct">62%</div>
+          </div>
+        </div>
+        <div class="traffic-row">
+          <div class="traffic-platform">
+            <div class="t-icon tt">🎵</div>
+            <div class="traffic-name-wrap">
+              <div class="traffic-name">TikTok</div>
+              <div class="traffic-mini-bar-bg"><div class="traffic-mini-bar-fill" style="width:28%"></div></div>
+            </div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">3 998</div>
+            <div class="traffic-num-pct">28%</div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">2 607</div>
+            <div class="traffic-num-pct">28%</div>
+          </div>
+        </div>
+        <div class="traffic-row">
+          <div class="traffic-platform">
+            <div class="t-icon yt">▶️</div>
+            <div class="traffic-name-wrap">
+              <div class="traffic-name">YouTube</div>
+              <div class="traffic-mini-bar-bg"><div class="traffic-mini-bar-fill" style="width:10%"></div></div>
+            </div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">1 428</div>
+            <div class="traffic-num-pct">10%</div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">931</div>
+            <div class="traffic-num-pct">10%</div>
+          </div>
+        </div>
+        <div class="traffic-row total-row">
+          <div class="traffic-platform">
+            <div class="t-icon total">Σ</div>
+            <div class="traffic-name-wrap">
+              <div class="traffic-name">Total</div>
+            </div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">14 280</div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">9 310</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Top pays -->
+      <div class="traffic-card">
+        <div class="traffic-card-header">
+          <span class="traffic-card-title">Top 5 pays</span>
+          <div class="traffic-card-pill">5 marchés</div>
+        </div>
+        <div class="traffic-cols-head">
+          <span class="traffic-col-lbl">Pays</span>
+          <span class="traffic-col-lbl right">Clics bruts</span>
+          <span class="traffic-col-lbl right">Visiteurs uniques</span>
+        </div>
+        <div class="traffic-row">
+          <div class="traffic-platform">
+            <div class="t-icon flag">🇫🇷</div>
+            <div class="traffic-name-wrap">
+              <div class="traffic-name">France</div>
+              <div class="traffic-mini-bar-bg"><div class="traffic-mini-bar-fill" style="width:71%"></div></div>
+            </div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">10 139</div>
+            <div class="traffic-num-pct">71%</div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">6 610</div>
+            <div class="traffic-num-pct">71%</div>
+          </div>
+        </div>
+        <div class="traffic-row">
+          <div class="traffic-platform">
+            <div class="t-icon flag">🇧🇪</div>
+            <div class="traffic-name-wrap">
+              <div class="traffic-name">Belgique</div>
+              <div class="traffic-mini-bar-bg"><div class="traffic-mini-bar-fill" style="width:12%"></div></div>
+            </div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">1 714</div>
+            <div class="traffic-num-pct">12%</div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">1 117</div>
+            <div class="traffic-num-pct">12%</div>
+          </div>
+        </div>
+        <div class="traffic-row">
+          <div class="traffic-platform">
+            <div class="t-icon flag">🇨🇭</div>
+            <div class="traffic-name-wrap">
+              <div class="traffic-name">Suisse</div>
+              <div class="traffic-mini-bar-bg"><div class="traffic-mini-bar-fill" style="width:9%"></div></div>
+            </div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">1 285</div>
+            <div class="traffic-num-pct">9%</div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">838</div>
+            <div class="traffic-num-pct">9%</div>
+          </div>
+        </div>
+        <div class="traffic-row">
+          <div class="traffic-platform">
+            <div class="t-icon flag">🇨🇦</div>
+            <div class="traffic-name-wrap">
+              <div class="traffic-name">Canada</div>
+              <div class="traffic-mini-bar-bg"><div class="traffic-mini-bar-fill" style="width:5%"></div></div>
+            </div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">714</div>
+            <div class="traffic-num-pct">5%</div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">466</div>
+            <div class="traffic-num-pct">5%</div>
+          </div>
+        </div>
+        <div class="traffic-row">
+          <div class="traffic-platform">
+            <div class="t-icon flag">🌍</div>
+            <div class="traffic-name-wrap">
+              <div class="traffic-name">Autres</div>
+              <div class="traffic-mini-bar-bg"><div class="traffic-mini-bar-fill" style="width:3%"></div></div>
+            </div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">428</div>
+            <div class="traffic-num-pct">3%</div>
+          </div>
+          <div class="traffic-num-cell">
+            <div class="traffic-num-main">279</div>
+            <div class="traffic-num-pct">3%</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TABLEAU -->
+  <div class="section-head">
+    <span class="label-mono">Détail par influenceur</span>
+    <div class="section-head-line"></div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-toolbar">
+      <span class="table-toolbar-label">Influenceurs activés</span>
+      <span class="table-count">7 affichés sur 48</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Influenceur</th>
+          <th>Réseau</th>
+          <th>Contenus</th>
+          <th>Abonnés</th>
+          <th>Clics bruts</th>
+          <th>Clics nets</th>
+          <th>CA généré</th>
+          <th>Commission</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="inf-cell"><div class="inf-av" style="background:linear-gradient(135deg,#34D399,#6EE7B7);color:#064E3B">TC</div><div><div class="inf-name">Clara T.</div><div class="inf-handle">@the_claraa</div></div></div></td>
+          <td><span class="net-emoji">📸</span></td>
+          <td><span class="td-val">2</span></td>
+          <td><span class="td-val">230k</span></td>
+          <td><span class="td-val">3 420</span></td>
+          <td><span class="td-val">2 180</span></td>
+          <td><span class="td-val">48 200€</span></td>
+          <td><span class="td-val">2 410€</span></td>
+        </tr>
+        <tr>
+          <td><div class="inf-cell"><div class="inf-av" style="background:linear-gradient(135deg,#818CF8,#A5B4FC);color:#1E1B4B">LF</div><div><div class="inf-name">Laurine F.</div><div class="inf-handle">@laurine.fit</div></div></div></td>
+          <td><span class="net-emoji">📸</span></td>
+          <td><span class="td-val">3</span></td>
+          <td><span class="td-val">186k</span></td>
+          <td><span class="td-val">2 140</span></td>
+          <td><span class="td-val">1 380</span></td>
+          <td><span class="td-val">28 400€</span></td>
+          <td><span class="td-val">1 420€</span></td>
+        </tr>
+        <tr>
+          <td><div class="inf-cell"><div class="inf-av" style="background:linear-gradient(135deg,#F87171,#FCA5A5);color:#7F1D1D">JE</div><div><div class="inf-name">Julie E.</div><div class="inf-handle">@julie.eats</div></div></div></td>
+          <td><span class="net-emoji">📸</span></td>
+          <td><span class="td-val">1</span></td>
+          <td><span class="td-val">78k</span></td>
+          <td><span class="td-val">1 870</span></td>
+          <td><span class="td-val">1 210</span></td>
+          <td><span class="td-val">22 600€</span></td>
+          <td><span class="td-val">1 130€</span></td>
+        </tr>
+        <tr>
+          <td><div class="inf-cell"><div class="inf-av" style="background:linear-gradient(135deg,#F59E0B,#FCD34D);color:#78350F">MO</div><div><div class="inf-name">Maxime O.</div><div class="inf-handle">@maxime_off</div></div></div></td>
+          <td><span class="net-emoji">🎵</span></td>
+          <td><span class="td-val">2</span></td>
+          <td><span class="td-val">61k</span></td>
+          <td><span class="td-val">980</span></td>
+          <td><span class="td-val">630</span></td>
+          <td><span class="td-val">9 800€</span></td>
+          <td><span class="td-val">490€</span></td>
+        </tr>
+        <tr>
+          <td><div class="inf-cell"><div class="inf-av" style="background:linear-gradient(135deg,#A78BFA,#C4B5FD);color:#3B0764">SV</div><div><div class="inf-name">Sofia V.</div><div class="inf-handle">@sofiav</div></div></div></td>
+          <td><span class="net-emoji">📸</span></td>
+          <td><span class="td-val">1</span></td>
+          <td><span class="td-val">94k</span></td>
+          <td><span class="td-val">1 240</span></td>
+          <td><span class="td-val">800</span></td>
+          <td><span class="td-val">14 200€</span></td>
+          <td><span class="td-val">710€</span></td>
+        </tr>
+        <tr>
+          <td><div class="inf-cell"><div class="inf-av" style="background:linear-gradient(135deg,#818CF8,#A5B4FC);color:#1E1B4B">KF</div><div><div class="inf-name">Kevin F.</div><div class="inf-handle">@kevinfit_</div></div></div></td>
+          <td><span class="net-emoji">🎵</span></td>
+          <td class="td-muted">—</td>
+          <td><span class="td-val">37k</span></td>
+          <td class="td-muted">—</td>
+          <td class="td-muted">—</td>
+          <td><span class="td-val">1 200€</span></td>
+          <td class="td-muted">—</td>
+        </tr>
+        <tr>
+          <td><div class="inf-cell"><div class="inf-av" style="background:#E5E7EB;color:#6B7080">RL</div><div><div class="inf-name">Romain L.</div><div class="inf-handle">@romain.life</div></div></div></td>
+          <td><span class="net-emoji">▶️</span></td>
+          <td><span class="td-val">1</span></td>
+          <td><span class="td-val">42k</span></td>
+          <td><span class="td-val">630</span></td>
+          <td><span class="td-val">410</span></td>
+          <td><span class="td-val">6 400€</span></td>
+          <td><span class="td-val">320€</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="table-footer">
+      <span>Lignes par page</span>
+      <select class="pg-select"><option>10</option><option>25</option><option>50</option></select>
+      <span>1 – 7 de 48</span>
+      <button class="pg-btn">‹</button>
+      <button class="pg-btn">›</button>
+    </div>
+  </div>
+
+  <!-- UGC -->
+  <div class="section-head">
+    <span class="label-mono">Contenus UGC générés</span>
+    <div class="section-head-line"></div>
+  </div>
+
+  <div class="ugc-grid">
+    <div class="ugc-card">
+      <div class="ugc-thumb ug1">📦</div>
+      <div class="ugc-info"><div class="ugc-handle">@laurine.fit</div></div>
+    </div>
+    <div class="ugc-card">
+      <div class="ugc-thumb ug2">🌿</div>
+      <div class="ugc-info"><div class="ugc-handle">@the_claraa</div></div>
+    </div>
+    <div class="ugc-card">
+      <div class="ugc-thumb ug3">📸</div>
+      <div class="ugc-info"><div class="ugc-handle">@julie.eats</div></div>
+    </div>
+    <div class="ugc-card">
+      <div class="ugc-thumb ug4">🎙️</div>
+      <div class="ugc-info"><div class="ugc-handle">@maxime_off</div></div>
+    </div>
+    <div class="ugc-card">
+      <div class="ugc-thumb ug5">⭐</div>
+      <div class="ugc-info"><div class="ugc-handle">@sofiav</div></div>
+    </div>
+    <div class="ugc-card">
+      <div class="ugc-thumb ug6">🎬</div>
+      <div class="ugc-info"><div class="ugc-handle">@kevinfit_</div></div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- ═══ FOOTER ═══ -->
+<div class="report-footer">
+  <div class="footer-grad-bar"></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-icon">
+        <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4" stroke="white" stroke-width="1.2"/><path d="M3.5 6C3.5 4.62 4.62 3.5 6 3.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="footer-brand-name">Shop My Influence</div>
+        <div class="footer-brand-sub">Rapport généré automatiquement via la plateforme SMI</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      Rapport Gifting — Bonobo / Collection Été 2024<br>
+      Généré le 28 mai 2026 · Données issues de la plateforme SMI
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
